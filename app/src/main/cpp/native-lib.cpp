@@ -29,6 +29,7 @@ Java_com_felspar_android_fosttester_Tester_runTests(
         g_results = ss.str();
         return jboolean{true};
     } catch ( std::exception &e ) {
+        ss << e.what() << '\n';
         g_results = ss.str();
         return jboolean{false};
     }
