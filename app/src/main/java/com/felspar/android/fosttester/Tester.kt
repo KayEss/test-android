@@ -3,6 +3,7 @@ package com.felspar.android.fosttester
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.text.method.ScrollingMovementMethod
 import android.view.Menu
 import android.view.MenuItem
 
@@ -19,10 +20,11 @@ class Tester : AppCompatActivity() {
             Snackbar.make(view, "Running...", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
             runTests()
-            sample_text.text = stringFromJNI();
+            sample_text.text = stringFromJNI()
         }
 
-        sample_text.text = ""
+        sample_text.text = stringFromJNI()
+        sample_text.movementMethod = ScrollingMovementMethod()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
