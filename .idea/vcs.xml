@@ -3,5 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-android-ndk" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fost-android-ndk/boringssl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fost-android-ndk/crypto" vcs="Git" />
   </component>
 </project>

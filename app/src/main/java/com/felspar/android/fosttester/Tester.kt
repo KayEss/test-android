@@ -10,19 +10,19 @@ import kotlinx.android.synthetic.main.activity_tester.*
 import kotlinx.android.synthetic.main.content_tester.*
 
 class Tester : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tester)
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Running...", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
+            runTests()
+            sample_text.text = stringFromJNI();
         }
 
-        // Example of a call to a native method
-        sample_text.text = stringFromJNI()
+        sample_text.text = ""
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -46,9 +46,9 @@ class Tester : AppCompatActivity() {
      * which is packaged with this application.
      */
     external fun stringFromJNI(): String
+    external fun runTests(): Boolean
 
     companion object {
-
         // Used to load the 'native-lib' library on application startup.
         init {
             System.loadLibrary("native-lib")
