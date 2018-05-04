@@ -18,7 +18,7 @@ android {
                 targets "native-lib"
                 cppFlags "-std=c++14",
                         "-DBOOST_VERSION_MAJOR=65"
-                arguments "-DANDROID_STL=c++_static",
+                arguments "-DANDROID_STL=c++_static"
                         "-DANDROID_CPP_FEATURES=rtti exceptions"
                         "-DANDROID_ARM_MODE=arm"
                         "-DANDROID_ARM_NEON=ON"
