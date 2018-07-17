@@ -7,12 +7,23 @@ import android.text.method.ScrollingMovementMethod
 import android.view.Menu
 import android.view.MenuItem
 
+import java.io.File
+
 import kotlinx.android.synthetic.main.activity_tester.*
 import kotlinx.android.synthetic.main.content_tester.*
+
+import com.felspar.android.Setting
+
 
 class Tester : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val dataroot = getFilesDir()
+        val logloc = File(dataroot, "logs")
+        logloc.mkdirs()
+        Setting.fromString("getFilesDir()", "Log sinks", "Log files directory", logloc.getAbsolutePath())
+
         setContentView(R.layout.activity_tester)
         setSupportActionBar(toolbar)
 
