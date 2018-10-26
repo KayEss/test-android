@@ -14,7 +14,10 @@ target_link_libraries(
         native-lib
         fost-test
         -Wl,--whole-archive
+            beanbag-views
             fost-android-java
+            fost-urlhandler
+
             beanbag-smoke
             beanbag-views-smoke
             fost-core-smoke
