@@ -10,7 +10,7 @@
     tools:showIn="@layout/activity_tester">
 
     <TextView
-        android:id="@+id/sample_text"
+        android:id="@+id/test_results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"

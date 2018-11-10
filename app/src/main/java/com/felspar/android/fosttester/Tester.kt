@@ -31,11 +31,11 @@ class Tester : AppCompatActivity() {
             Snackbar.make(view, "Running...", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
             runTests()
-            sample_text.text = stringFromJNI()
+            test_results.text = stringFromJNI()
         }
 
-        sample_text.text = stringFromJNI()
-        sample_text.movementMethod = ScrollingMovementMethod()
+        test_results.text = stringFromJNI()
+        test_results.movementMethod = ScrollingMovementMethod()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
