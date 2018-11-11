@@ -35,7 +35,6 @@ class Tester : AppCompatActivity() {
         }
 
         test_results.text = stringFromJNI()
-        test_results.movementMethod = ScrollingMovementMethod()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
