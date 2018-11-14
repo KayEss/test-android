@@ -23,6 +23,9 @@ class Tester : AppCompatActivity() {
         val logloc = File(dataroot, "logs")
         logloc.mkdirs()
         Setting.fromString("getFilesDir()", "Log sinks", "Log files directory", logloc.getAbsolutePath())
+        val dbloc = File(dataroot, "db")
+        dbloc.mkdirs()
+        Setting.fromString("getFilesDir()", "JSON DB", "Default file location", dbloc.absolutePath)
 
         setContentView(R.layout.activity_tester)
         setSupportActionBar(toolbar)
