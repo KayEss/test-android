@@ -4,8 +4,11 @@ set(BUILD_SHARED_LIBS OFF
     CACHE BOOL "Build shared libraries" FORCE)
 set(CMAKE_CXX_FLAGS "-std=c++17 ${CMAKE_CXX_FLAGS}")
 
+add_custom_target(check)
+
 # Other required build files
 add_subdirectory(src/main/cpp/fost-android-ndk)
+add_subdirectory(src/main/cpp/fost-android-ndk/fost/beanbag)
 add_subdirectory(src/main/cpp/fost-android-java)
 
 add_library(native-lib SHARED src/main/cpp/native-lib.cpp)
