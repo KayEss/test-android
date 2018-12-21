@@ -9,6 +9,7 @@ add_custom_target(check)
 # Other required build files
 add_subdirectory(src/main/cpp/fost-android-ndk)
 add_subdirectory(src/main/cpp/fost-android-ndk/fost/beanbag)
+add_subdirectory(src/main/cpp/fost-android-ndk/fost/json-schema)
 add_subdirectory(src/main/cpp/fost-android-java)
 
 add_library(native-lib SHARED src/main/cpp/native-lib.cpp)
