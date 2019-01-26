@@ -10,6 +10,8 @@ add_custom_target(check)
 add_subdirectory(src/main/cpp/fost-android-ndk)
 add_subdirectory(src/main/cpp/fost-android-ndk/fost/beanbag)
 add_subdirectory(src/main/cpp/fost-android-ndk/fost/json-schema)
+add_subdirectory(src/main/cpp/fost-android-ndk/mdca-platform/mdca-common)
+add_subdirectory(src/main/cpp/fost-android-ndk/mdca-platform/mdca-android)
 add_subdirectory(src/main/cpp/fost-android-java)
 
 add_library(native-lib SHARED src/main/cpp/native-lib.cpp)
@@ -17,12 +19,22 @@ add_library(native-lib SHARED src/main/cpp/native-lib.cpp)
 target_link_libraries(
         native-lib
         fost-test
+        mdca-android
+
+        # The linker will want to throw away symbols not used in
+        # the actual code. The below are needed explicitly
+        # so that the linker retains everything
         -Wl,--whole-archive
+            # If any part of the following libraries are needed
+            # then they must be loaded in this way here so that
+            # all code they contain will be included
             f5-json-schema
             beanbag-views
             fost-android-java
             fost-urlhandler
+            mdca-common
 
+            # The following are needed so that all tests are kept
             beanbag-smoke
             beanbag-views-smoke
             fost-core-smoke
@@ -33,5 +45,7 @@ target_link_libraries(
             fost-s3-smoke
             fost-sinks-smoke
             fost-urlhandler-smoke
+
+            mdca-common-smoke
         -Wl,--no-whole-archive
     )
