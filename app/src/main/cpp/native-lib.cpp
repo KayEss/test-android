@@ -30,7 +30,7 @@ Java_com_felspar_android_fosttester_Tester_runTests(
         return jboolean{true};
     } catch ( std::exception &e ) {
         ss << e.what() << '\n';
-        g_results = ss.str();
+        g_results = "FAILURE via escaped exception\n\n" + ss.str();
         return jboolean{false};
     }
 }
