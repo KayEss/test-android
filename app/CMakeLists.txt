@@ -18,6 +18,7 @@ target_link_libraries(
         native-lib
         fost-test
         -Wl,--whole-archive
+            f5-json-schema
             beanbag-views
             fost-android-java
             fost-urlhandler
