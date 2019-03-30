@@ -16,6 +16,7 @@
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/concept_check" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/config" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/container" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/container_hash" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/conversion" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/core" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/date_time" vcs="Git" />
@@ -51,6 +52,7 @@
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/system" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/throw_exception" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/tokenizer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/tti" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/tuple" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/type_index" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-android-ndk/boost/type_traits" vcs="Git" />
