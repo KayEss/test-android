@@ -1,37 +1,33 @@
 #include <jni.h>
+#include <messaging.hpp>
+
+#include <fost/insert>
 #include <fost/test>
+#include <thread>
 
 
 namespace {
     const fostlib::setting<bool> c_verbose(
             "native-lib.cpp",
             "Tests", "Display test names", true);
-    std::string g_results("No tests have been run yet\nPress the run button...");
 }
 
 
-extern "C" JNIEXPORT jstring
-JNICALL
-Java_com_felspar_android_fosttester_Tester_stringFromJNI(
-        JNIEnv *env, jobject /* this */
-) {
-    return env->NewStringUTF(g_results.c_str());
-}
-
-
-extern "C" JNIEXPORT jboolean
+extern "C" JNIEXPORT void JNICALL
 Java_com_felspar_android_fosttester_Tester_runTests(
         JNIEnv *env, jobject /* this */
 ) {
-    std::stringstream ss;
-    try {
-        fostlib::test::suite::execute(ss);
-        g_results = ss.str();
-        return jboolean{true};
-    } catch ( std::exception &e ) {
-        ss << e.what() << '\n';
-        g_results = "FAILURE via escaped exception\n\n" + ss.str();
-        return jboolean{false};
-    }
+    std::thread tests{[]() {
+        std::stringstream ss;
+        try {
+            fostlib::test::suite::execute(ss);
+        } catch (std::exception &e) {
+            ss << e.what() << '\n';
+        }
+        fostlib::json msg;
+        insert(msg, "display", fostlib::string{ss.str()});
+        send_message(msg);
+    }};
+    tests.detach();
 }
 
