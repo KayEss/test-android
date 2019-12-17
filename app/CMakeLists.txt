@@ -11,7 +11,6 @@ add_custom_target(stress)
 # Other required build files
 add_subdirectory(src/main/cpp/fost-mobile)
 add_subdirectory(src/main/cpp/fost-mobile/fost/beanbag)
-add_subdirectory(src/main/cpp/fost-mobile/fost/json-schema)
 add_subdirectory(src/main/cpp/fost-mobile/mdca-platform/mdca-common)
 add_subdirectory(src/main/cpp/fost-mobile/mdca-platform/mdca-android)
 add_subdirectory(src/main/cpp/fost-android-java)
