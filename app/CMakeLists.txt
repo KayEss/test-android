@@ -11,7 +11,7 @@ add_custom_target(stress)
 # Other required build files
 add_subdirectory(src/main/cpp/fost-mobile)
 add_subdirectory(src/main/cpp/fost-mobile/fost/beanbag)
-add_subdirectory(src/main/cpp/fost-mobile/fost/json-schema)
+add_subdirectory(src/main/cpp/fost-mobile/fost/makham)
 add_subdirectory(src/main/cpp/fost-mobile/mdca-platform/mdca-common)
 add_subdirectory(src/main/cpp/fost-mobile/mdca-platform/mdca-android)
 add_subdirectory(src/main/cpp/fost-android-java)
@@ -43,6 +43,7 @@ target_link_libraries(
             # The following are needed so that all tests are kept
             beanbag-smoke
             beanbag-views-smoke
+            f5-makham-test
             fost-core-smoke
             fost-crypto-smoke
             fost-datetime-smoke
