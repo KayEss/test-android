@@ -68,6 +68,7 @@
     <mapping directory="$PROJECT_DIR$/fost-mobile/fost/cord" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-mobile/fost/internet" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-mobile/fost/json-schema" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fost-mobile/fost/makham" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-mobile/fost/threading" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-mobile/fost/web" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fost-mobile/mdca-platform" vcs="Git" />
