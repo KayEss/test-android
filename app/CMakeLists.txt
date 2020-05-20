@@ -1,9 +1,8 @@
-project(test-android)
 cmake_minimum_required(VERSION 3.10)
+project(test-android)
 
 set(BUILD_SHARED_LIBS OFF
     CACHE BOOL "Build shared libraries" FORCE)
-set(CMAKE_CXX_FLAGS "-std=c++17 ${CMAKE_CXX_FLAGS}")
 
 add_custom_target(check)
 add_custom_target(stress)
@@ -17,6 +16,7 @@ add_subdirectory(src/main/cpp/fost-mobile/mdca-platform/mdca-android)
 add_subdirectory(src/main/cpp/fost-android-java)
 
 add_library(native-lib SHARED src/main/cpp/native-lib.cpp)
+target_compile_features(native-lib PRIVATE cxx_std_20)
 
 # Extra libraries containing tests we want to use
 add_subdirectory(src/main/cpp/fost-mobile/fost/web/Cpp/fost-urlhandler-test)

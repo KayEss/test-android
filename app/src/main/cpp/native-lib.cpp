@@ -6,6 +6,15 @@
 #include <thread>
 
 
+/// This is a C++20 shibboleth.
+struct A {
+    /// clang 10 and above
+    //bool operator<=>(A const &) const = default;
+    /// clang 9
+    bool operator<=>(A const &) const { return true; }
+};
+
+
 namespace {
     const fostlib::setting<bool> c_verbose(
             "native-lib.cpp",
