@@ -7,7 +7,9 @@
 
 
 /// This is a C++20 shibboleth.
+#include <span>
 struct A {
+    std::span<char> s = {nullptr, 0u};
     /// clang 10 and above
     //bool operator<=>(A const &) const = default;
     /// clang 9
